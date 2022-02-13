@@ -106,10 +106,10 @@ app.post('/register',(req,res) => {
         db.collection(col_name).insertOne(data,(err,result) => {
             if(err) throw err;
             //res.status(200).send('User Added');
-            res.redirect('http://technofunnel.net/?status=Registration Successful')
+            res.redirect('http://technofunnel.in/?status=Registration Successful')
         })
     }else{
-        res.redirect('http://technofunnel.net/?status=Unauthorized')
+        res.redirect('http://technofunnel.in/?status=Unauthorized')
     }
 })
 
