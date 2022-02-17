@@ -101,7 +101,7 @@ app.post('/register',(req,res) => {
             "name":req.body.name,
             "email":req.body.email,
             "phone":req.body.phone,
-            "status":'Not Joined'
+            "status":'Not Called'
         }
         db.collection(col_name).insertOne(data,(err,result) => {
             if(err) throw err;
@@ -156,7 +156,7 @@ app.put('/deactivateUser',(req,res) => {
         {_id:mongo.ObjectId(req.body._id)},
         {
             $set:{
-                status:'Not Joined'
+                status:'Not Called'
             }
         },(err,result) =>{
             if(err) throw err;
@@ -171,7 +171,7 @@ app.put('/activateUser',(req,res) => {
         {_id:mongo.ObjectId(req.body._id)},
         {
             $set:{
-                status:'Joined'
+                status:'Called'
             }
         },(err,result) =>{
             if(err) throw err;
