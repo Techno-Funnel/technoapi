@@ -101,6 +101,7 @@ app.post('/register',(req,res) => {
             "name":req.body.name,
             "email":req.body.email,
             "phone":req.body.phone,
+            "date":new Date(),
             "status":'Not Called'
         }
         db.collection(col_name).insertOne(data,(err,result) => {
